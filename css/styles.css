@@ -71,27 +71,29 @@ html {
 *::after { 
   box-sizing: inherit;
 }
-body { 
-   height: 100%; 
-   font-family: "Rubik", "Arial", sans-serif;
-   font-size: 15px; 
-   line-height: 18px;  
-   color: #434343; 
-  }   
-  *:focus { 
-    outline: 0; 
-    box-shadow: 0 0 0 4px rgba(41, 80, 147, 0.4);
-  } 
-  img { 
-    max-width: 100%; 
-    /*height: auto;*/
-  }
-  /* Container */ 
-  .container { 
-   max-width: 1240px; 
-   padding: 0 20px;  
-   margin: 0 auto;
-  } 
+body {  
+  display: flex; 
+  flex-direction: column;
+  height: 100%; 
+  font-family: "Rubik", "Arial", sans-serif;
+  font-size: 15px; 
+  line-height: 18px;  
+  color: #434343; 
+}   
+*:focus { 
+  outline: 0; 
+  box-shadow: 0 0 0 4px rgba(41, 80, 147, 0.4);
+} 
+img { 
+  max-width: 100%; 
+  /*height: auto;*/
+} 
+/* Container */  
+.container { 
+  max-width: 1240px; 
+  padding: 0 20px;  
+  margin: 0 auto;
+} 
   /* Site-header */  
   .site-header {  
     padding-top: 40px; 
@@ -250,20 +252,113 @@ body {
   /* Top-banner */  
   .top-banner__link { 
     display: flex;
-  }  
-  /* Site-footer */  
-  .site-footer {  
-    padding: 18px 0; 
-    font-size: 14px; 
-    line-height: 17px;
-    background-color: #295093; 
-    color: #fff;
-  } 
-  .site-footer__top { 
-    display: flex;  
-    flex-wrap: wrap;  
-    align-items: center;
-  } 
+}  
+.main-content { 
+  flex-grow: 1; 
+  padding-top: 22px; 
+  padding-bottom: 38px;  
+    
+}  
+  /* !Covid-Info  */ 
+.covid_info {  
+  display: flex; 
+  align-items: center;  
+  padding: 30px 35px;
+  background-color:  #F6F6F9;
+  border-radius: 5px; 
+  color: #000000;
+  
+} 
+.covid_info::before { 
+  content: ""; 
+  width: 43px; 
+  height: 45px;  
+  margin-right: 25px;
+  background: url(../img/covid-icon.svg) no-repeat center center / contain;  
+  
+  
+} 
+.covid_info_heading {  
+  width: 232px;   
+  margin-top: 0; 
+  margin-bottom: 0;
+  margin-right: 70px;
+  font-weight: 500; 
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+} 
+.covid-info_stats_list {  
+  flex-grow: 1;
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  padding: 0; 
+  margin: 0; 
+  list-style-type: none;
+} 
+.covid-info_stat { 
+  flex-grow: 1; 
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center;   
+  padding-left: 24px; 
+  padding-right: 24px;
+  border-left: 2px solid #F4CCD1;
+}   
+.covid-info_stat--mask { 
+  padding-top: 17px;
+  padding-bottom: 17px; 
+  border-left-color:  #EB5569;
+}
+.covid-info_stat::before { 
+  width: 38px; 
+  height: 40px; 
+  margin-right: 18px; 
+  background:  no-repeat center center / contain; 
+  content: "";
+} 
+.covid-info_stat--mask::before { 
+  background-image: url(../img/icon-mask.svg)
+} 
+.covid-info_stat--happy::before { 
+  background-image: url(../img/icon-smile.svg)
+} 
+.covid-info_stat--die::before { 
+  background-image: url(../img/icon-daie.svg)
+}
+.covid-info_stat-title { 
+  margin: 0;  
+  margin-bottom: 5px;
+  font-size: 18px; 
+  line-height: 21px; 
+  font-weight: 400;
+} 
+.covid-info_stat_value { 
+  font-size: 25px; 
+  line-height: 30px; 
+  font-weight: 500;
+} 
+.covid-info_stat-title--red { 
+  color: #DB0000;
+} 
+.covid-info_stat-title--green { 
+  color: #05B135;
+}
+  /* !Site-footer */  
+.site-footer { 
+  padding: 18px 0; 
+  font-size: 14px; 
+  line-height: 17px;
+  background-color: #295093; 
+  color: #fff;
+} 
+.site-footer__top { 
+  display: flex;  
+  flex-wrap: wrap;  
+  align-items: center; 
+ 
+} 
   .site-footer__logo {  
     display: flex; 
     padding: 10px;
@@ -272,18 +367,18 @@ body {
     border-radius: 5px;  
     color: #fff;
     }  
-    .site-footer_logo-text { 
-      position: absolute; 
-      width: 173px;
-      height: 21px;
-      left: 85px;
-      top: 355px;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 19px;
-      color: #FFFFFF;
-    }
-    .site-footer__sub-text { 
+.site-footer_logo-text {  
+  position: absolute; 
+  width: 173px;
+  /* height: 21px; */
+  left: 75px;
+  top: 680px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color:  #FFFFFF;
+}
+.site-footer__sub-text { 
       margin: 0; 
       margin-right: 17px; 
     } 
